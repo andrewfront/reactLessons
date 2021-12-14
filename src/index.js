@@ -16,7 +16,13 @@ const books = [
     title: 'The Big Book of Silly Jokes for Kids',
     author: 'Carole P. Roman'
   },
+  {
+    img: 'https://images-na.ssl-images-amazon.com/images/I/A1A84JD9wGL._AC_UL302_SR302,200_.jpg',
+    title: 'The Complete Cookbook for Young Chefs',
+    author: 'Test Kitchen Kids'
+  },
 ]
+// simple array iteration
 // const names = ['Susan', 'Andrew', 'Peter']
 // const newNames = names.map((name) => {
 //   return <h1>{name}</h1>
@@ -32,11 +38,17 @@ const books = [
 function Booklist() {
   return (
     <section className='booklist'>
-      {newNames}
+      {books.map((book) => {
+        // const {img, title, author} = book
+        return (
+          <Book book={book}></Book>
+        )
+      })}
     </section>
   )
 }
-function Book({img, title, author}) {
+function Book(props) {
+  const {img, title, author} = props.book
   return <article className='book'>
     {/* <Image/>
     <Title/>
