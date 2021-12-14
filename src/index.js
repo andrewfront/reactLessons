@@ -5,16 +5,23 @@ import ReactDOM from 'react-dom'
 import './index.css'
 
 //setup vars
-const firstBook = {
-  img: 'https://images-na.ssl-images-amazon.com/images/I/8144Vic9C5L._AC_UL604_SR604,400_.jpg',
-  title: 'Love You to the Moon and Back',
-  author: 'Amelia Hepworth'
-}
-const secondBook = {
-  img: 'https://images-na.ssl-images-amazon.com/images/I/81QOQobJiGL._AC_UL604_SR604,400_.jpg',
-  title: 'The Big Book of Silly Jokes for Kids',
-  author: 'Carole P. Roman'
-}
+const books = [
+  {
+    img: 'https://images-na.ssl-images-amazon.com/images/I/8144Vic9C5L._AC_UL604_SR604,400_.jpg',
+    title: 'Love You to the Moon and Back',
+    author: 'Amelia Hepworth'
+  },
+  {
+    img: 'https://images-na.ssl-images-amazon.com/images/I/81QOQobJiGL._AC_UL604_SR604,400_.jpg',
+    title: 'The Big Book of Silly Jokes for Kids',
+    author: 'Carole P. Roman'
+  },
+]
+// const names = ['Susan', 'Andrew', 'Peter']
+// const newNames = names.map((name) => {
+//   return <h1>{name}</h1>
+// })
+// console.log(newNames);
 // const title = 'Love You to the Moon and Back'
 // const author = 'Amelia Hepworth'
 // const img = 'https://images-na.ssl-images-amazon.com/images/I/8144Vic9C5L._AC_UL604_SR604,400_.jpg'
@@ -25,16 +32,11 @@ const secondBook = {
 function Booklist() {
   return (
     <section className='booklist'>
-      <Book img = {firstBook.img} title = {firstBook.title} author = {firstBook.author}>
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam odio ea praesentium nulla voluptates provident corrupti quidem officia numquam iste.
-          </p>
-      </Book>
-      <Book img = {secondBook.img} title = {secondBook.title} author = {secondBook.author}/>
+      {newNames}
     </section>
   )
 }
-function Book({img, title, author, children}) {
+function Book({img, title, author}) {
   return <article className='book'>
     {/* <Image/>
     <Title/>
@@ -42,7 +44,6 @@ function Book({img, title, author, children}) {
     <img className='image' src={img} alt="moon" />
     <h1>{title}</h1>
     <h4 className='heading'>{author}</h4>
-    {children}
     {/* <h4 className='heading' style={{color: '#617d98', fontSize: '0.75rem', marginTop: '0.75rem'}}>{firstBook.author.toUpperCase()}</h4> */}
 
     </article>
