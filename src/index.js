@@ -52,13 +52,26 @@ function Booklist() {
   )
 }
 function Book({img, title, author}) {
-  return <article className='book'>
+  // const (img, title, author) = props.book without spread operator
+  const clickHandler = (e) => {
+    // console.log(e);
+    // console.log(e.target);
+    alert('hello world')
+  }
+  const complexExample = () => {
+    console.log(author)
+  }
+  return <article className='book' onMouseOver={() => {
+    console.log(title)
+  }}>
     {/* <Image/>
     <Title/>
     <Author/> */}
     <img className='image' src={img} alt="moon" />
-    <h1>{title}</h1>
+    <h1 onClick={() => console.log(title)}>{title}</h1>
     <h4 className='heading'>{author}</h4>
+    <button type='button' onClick={clickHandler}>Click me</button>
+    <button type='button' onClick={() => complexExample(author)}>more complex example</button>
     {/* <h4 className='heading' style={{color: '#617d98', fontSize: '0.75rem', marginTop: '0.75rem'}}>{firstBook.author.toUpperCase()}</h4> */}
 
     </article>
